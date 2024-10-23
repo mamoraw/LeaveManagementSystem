@@ -8,7 +8,9 @@ namespace LeaveManagementSystem.Web.MappingProfiles
     {
         public AutoMapperProfile()
         {
-            CreateMap<LeaveType, IndexVM>();
+            CreateMap<LeaveType, LeaveTypeReadOnlyVM>();
+            CreateMap<LeaveTypeCreateVM, LeaveType>();
+            CreateMap<LeaveTypeEditVM, LeaveType>().ReverseMap();
         }
     }
 }
