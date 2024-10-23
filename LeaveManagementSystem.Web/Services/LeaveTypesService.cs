@@ -61,12 +61,12 @@ public class LeaveTypesService : ILeaveTypesService
         await _context.SaveChangesAsync();
     }
 
-    private bool LeaveTypeExists(int id)
+    public bool LeaveTypeExists(int id)
     {
         return _context.LeaveTypes.Any(e => e.Id == id);
     }
 
-    private async Task<bool> CheckIfLeaveTypeNameExists(string name)
+    public async Task<bool> CheckIfLeaveTypeNameExists(string name)
     {
         // Hier wird eine Verbindung zur Datenbank hergestellt, zum Table LeaveTypes
         // und dann gecheckt ob der Name enthalten ist.
@@ -74,7 +74,7 @@ public class LeaveTypesService : ILeaveTypesService
         return await _context.LeaveTypes.AnyAsync(q => q.Name.ToLower().Equals(lowercaseName));
     }
 
-    private async Task<bool> CheckIfLeaveTypeNameExistsForEdit(LeaveTypeEditVM leaveTypeEdit)
+    public async Task<bool> CheckIfLeaveTypeNameExistsForEdit(LeaveTypeEditVM leaveTypeEdit)
     {
         var lowercaseName = leaveTypeEdit.Name.ToLower();
         return await _context.LeaveTypes.AnyAsync(q => q.Name.ToLower().Equals(lowercaseName) && q.Id != leaveTypeEdit.Id);
