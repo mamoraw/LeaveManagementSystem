@@ -157,8 +157,6 @@ namespace LeaveManagementSystem.Web.Controllers
             return View(leaveTypeEdit);
         }
 
-      
-
         // GET: LeaveTypes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
