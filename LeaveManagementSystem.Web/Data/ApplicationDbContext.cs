@@ -51,8 +51,8 @@ namespace LeaveManagementSystem.Web.Data
                     DateOfBirth = new DateOnly(1950,12,01)
                 });
 
-            builder.Entity<ApplicationUserRole<string>>().HasData(
-                new ApplicationUserRole<string>
+            builder.Entity<IdentityUserRole<string>>().HasData(
+                new IdentityUserRole<string>
                 {
                     RoleId = "1ba60648-1989-4c5c-8fae-dc3199c78cba",
                     UserId = "3b0ca64d-f877-4dd5-8944-edf7551a967e"
